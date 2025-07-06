@@ -14,7 +14,7 @@ export class Login {
   constructor(private auth: Auth) {}
 
   ngOnInit(): void {
-     this.auth.get("/auth/url").subscribe((data: any) => {
+     this.auth.getLoginUrl().subscribe((data: any) => {
       this.url = data.url;
       console.log(data);
       console.log(this.url);

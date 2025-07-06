@@ -4,5 +4,5 @@ spring:
    resourceserver:
     opaque-token:
      introspection-uri: "https://www.googleapis.com"
-     clientId: "placeholder"
-     clientSecret: "placeholder"
+     clientId: "${clientId}"
+     clientSecret: "${clientSecret}"

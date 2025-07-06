@@ -15,7 +15,8 @@ export class PublicContent {
   constructor(private http: Auth) {}
 
   ngOnInit(): void {
-    this.http.get("/public/messages").subscribe((data: Message) => this.content = data.message);
+    this.http.getMessages().subscribe((data: Message) => this.content = data.message);
+
   }
 
 }
