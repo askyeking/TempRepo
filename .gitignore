@@ -9,3 +9,5 @@ default
 .mvn
 *.war
 *.bak
+.mwb
+.sql

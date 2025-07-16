@@ -11,6 +11,7 @@ public class WebClientConfig {
 	@Value("${spring.security.oauth2.resourceserver.opaque-token.introspection-uri}")
 	private String introspectUri;
 	
+	//Configures a WebClient Bean that hits googles "introspect" endpoint
 	@Bean
 	protected WebClient userInfoClient() {
 		return WebClient.builder().baseUrl(introspectUri).build();

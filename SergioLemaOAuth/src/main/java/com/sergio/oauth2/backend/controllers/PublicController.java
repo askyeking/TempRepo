@@ -13,7 +13,6 @@ public class PublicController {
 	@GetMapping("/public/messages")
 	public ResponseEntity<MessageDTO> privateMessages() {
 		return ResponseEntity.ok(new MessageDTO("Public content"));
-		
 	}
 }
 

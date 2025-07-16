@@ -20,6 +20,8 @@ export class App {
   constructor(private http: Auth, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    console.log("app loaded")
+    console.log(this.route)
     this.route.queryParams
       .subscribe(params => {
         if (params["code"] !== undefined) {

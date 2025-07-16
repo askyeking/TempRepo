@@ -9,6 +9,7 @@ import { Message } from '../models/message';
 })
 export class Auth {
 
+  //I think we want to store this as a HTTP Only cookie instead of in memory
   token: string = "";
 
   constructor(private http: HttpClient) { }
@@ -31,7 +32,7 @@ export class Auth {
   }
 
   getToken(code: string): Observable<boolean> {
-    return this.http.get<Token>("http://localhost:8080/auth/callback?code=" + code, {observe: "response"})
+    return this.http.get<Token>("http://localhost:8080/auth/getToken?code=" + code, {observe: "response"})
       .pipe(map((response: HttpResponse<Token>) => {
         if (response.status === 200 && response.body !== null) {
           this.token = response.body.token;
